@@ -15,3 +15,7 @@ template <typename T>void printBracket(T& param)
 	std::cout << " [ " << param << " ] ";
 };
 
+template <typename T>void printBracketNewline(T& param)
+{
+	std::cout << " [ " << param << " ] " << "\n";
+};
