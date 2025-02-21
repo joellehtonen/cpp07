@@ -26,6 +26,7 @@ Array<T>::Array(const Array& copy) {
 	this->_size = copy._size;
 	for (unsigned int i = 0; i < _size; i++)
 		this->_array[i] = copy._array[i];
+	// *this = copy;
 	std::cout << "Copy constructor called" << std::endl;
 }
 

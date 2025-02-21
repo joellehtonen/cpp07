@@ -1,7 +1,7 @@
 NAME	=	array
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++20 -ggdb3
-SRCS	=	main_subject.cpp 
+SRCS	=	main.cpp 
 HEADER  =	Array.hpp \
 			Array.tpp
 OBJS	=	$(SRCS:.cpp=.o)
