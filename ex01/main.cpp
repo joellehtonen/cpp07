@@ -50,15 +50,6 @@ static void replaceFirstVowel(std::string& string)
 	}
 }
 
-// ex01.cpp:29:3: error: no matching function for call to 'iter'
-//   iter( tab, 5, print<const int> );
-//   ^~~~
-// ./iter.hpp:6:6: note: candidate template ignored: deduced conflicting types for parameter 'T' ('int' vs. 'const int')
-// void iter(T* array, size_t len, void (*function)(T& param))
-//      ^
-// 1 error generated.
-
-
 int main(void)
 {
 
@@ -73,6 +64,11 @@ int main(void)
 	std::cout << std::endl;
 	::iter<int>(intArray, len1, multiplyByTwo);
 	::iter<int>(intArray, len1, printBracket);
+	std::cout << RESET << std::endl;
+
+	std::cout << "\n---TEST WITH NULLPTRS---\n";
+	::iter<int>(nullptr, len1, multiplyByTwo);
+	::iter<int>(intArray, len1, nullptr);
 	std::cout << RESET << std::endl;
 
 	char charArray[] = {'a', 'b', 'c'};

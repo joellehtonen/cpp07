@@ -1,42 +1,46 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <climits>
 
 template <typename T>
-void iter(T* array, int len, void (*function)(T& param))
+void iter(T* array, size_t len, void (*function)(T& param))
 {
-	if (!array || len < 0)
+	if (!array || !function)
 	{
-		std::cerr << "Error. Pointer cannot be null and size cannot be less than 0\n";
+		std::cerr << "Error. Pointer cannot be null\n";
 		return ;
 	}
-	for (int i = 0; i < len; i++)
+	for (size_t i = 0; i < len; i++)
 	{
 		function(array[i]);
 	}
 };
 
 template <typename T>
-void iter(T* array, int len, void (*function)(const T& param))
+void iter(const T* array, size_t len, void (*function)(const T& param))
 {
-	if (!array || len < 0)
+	if (!array || !function)
 	{
-		std::cerr << "Error. Pointer cannot be null and size cannot be less than 0\n";
+		std::cerr << "Error. Pointer cannot be null\n";
 		return ;
 	}
-	for (int i = 0; i < len; i++)
+	for (size_t i = 0; i < len; i++)
 	{
 		function(array[i]);
 	}
 };
-
-// THESE ARE FOR TESTING
-template <typename T>void printBracket(T& param)
+ 
+// FOR TESTS
+template <typename T>
+void printBracket(T& param)
 {
 	std::cout << " [ " << param << " ] ";
 };
 
-template <typename T>void printBracketNewline(T& param)
+// FOR TESTS
+template <typename T>
+void printBracketNewline(T& param)
 {
 	std::cout << " [ " << param << " ] " << "\n";
 };
