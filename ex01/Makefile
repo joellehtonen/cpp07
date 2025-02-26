@@ -1,7 +1,7 @@
 NAME	=	iter
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++20
-SRCS	=	main.cpp 
+SRCS	=	ex01.cpp 
 HEADER  =	iter.hpp
 OBJS	=	$(SRCS:.cpp=.o)
 

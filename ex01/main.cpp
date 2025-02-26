@@ -1,5 +1,6 @@
 #include "iter.hpp"
 #include <cmath>
+#include <stdexcept>
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -49,8 +50,18 @@ static void replaceFirstVowel(std::string& string)
 	}
 }
 
+// ex01.cpp:29:3: error: no matching function for call to 'iter'
+//   iter( tab, 5, print<const int> );
+//   ^~~~
+// ./iter.hpp:6:6: note: candidate template ignored: deduced conflicting types for parameter 'T' ('int' vs. 'const int')
+// void iter(T* array, size_t len, void (*function)(T& param))
+//      ^
+// 1 error generated.
+
+
 int main(void)
 {
+
 	int		intArray[] = {0, 1, 2, 3, 4, 5};
 	size_t	len1 = sizeof(intArray) / sizeof(int);
 
