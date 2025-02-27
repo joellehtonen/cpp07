@@ -7,28 +7,18 @@ template <typename T>
 void iter(T* array, size_t len, void (*function)(T& param))
 {
 	if (!array || !function)
-	{
-		std::cerr << "Error. Pointer cannot be null\n";
-		return ;
-	}
+		throw std::runtime_error("Pointer cannot be null");
 	for (size_t i = 0; i < len; i++)
-	{
 		function(array[i]);
-	}
 };
 
 template <typename T>
 void iter(const T* array, size_t len, void (*function)(const T& param))
 {
 	if (!array || !function)
-	{
-		std::cerr << "Error. Pointer cannot be null\n";
-		return ;
-	}
+		throw std::runtime_error("Pointer cannot be null");
 	for (size_t i = 0; i < len; i++)
-	{
 		function(array[i]);
-	}
 };
  
 // FOR TESTS

@@ -52,7 +52,7 @@ static void replaceFirstVowel(std::string& string)
 
 int main(void)
 {
-
+	try {
 	int		intArray[] = {0, 1, 2, 3, 4, 5};
 	size_t	len1 = sizeof(intArray) / sizeof(int);
 
@@ -66,10 +66,10 @@ int main(void)
 	::iter<int>(intArray, len1, printBracket);
 	std::cout << RESET << std::endl;
 
-	std::cout << "\n---TEST WITH NULLPTRS---\n";
-	::iter<int>(nullptr, len1, multiplyByTwo);
-	::iter<int>(intArray, len1, nullptr);
-	std::cout << RESET << std::endl;
+	// std::cout << "\n---TEST WITH NULLPTRS---\n";
+	// ::iter<int>(nullptr, len1, multiplyByTwo);
+	// ::iter<int>(intArray, len1, nullptr);
+	// std::cout << RESET << std::endl;
 
 	char charArray[] = {'a', 'b', 'c'};
 	size_t	len2 = sizeof(charArray) / sizeof(char);
@@ -108,4 +108,8 @@ int main(void)
 	std::cout << std::endl;
 	::iter<std::string>(stringArray, len4, replaceFirstVowel);
 	::iter<std::string>(stringArray, len4, printBracketNewline);
+	}
+	catch (std::exception& e) {
+		std::cout << "Error. " << e.what() << std::endl;
+	}
 }
